@@ -47,17 +47,17 @@ public class HomeScreenActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
-            Bundle extras = data.getExtras();
-            capturedImageBitmap = (Bitmap) extras.get("data");  // Save the image in a variable
-            imageView.setImageBitmap(capturedImageBitmap);  // Display the image
+//            Bundle extras = data.getExtras();
+//            capturedImageBitmap = (Bitmap) extras.get("data");  // Save the image in a variable
+//            imageView.setImageBitmap(capturedImageBitmap);  // Display the image
+//
+//            // Convert the Bitmap to ByteArray and pass it to the next activity
+//            ByteArrayOutputStream stream = new ByteArrayOutputStream();
+//            capturedImageBitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
+//            byte[] byteArray = stream.toByteArray();
 
-            // Convert the Bitmap to ByteArray and pass it to the next activity
-            ByteArrayOutputStream stream = new ByteArrayOutputStream();
-            capturedImageBitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
-            byte[] byteArray = stream.toByteArray();
-
-            Intent intent = new Intent(HomeScreenActivity.this, HomeScreenActivity.class);//yasmin add your page
-            intent.putExtra("captured_image", byteArray);  // Pass the ByteArray to the next activity
+            Intent intent = new Intent(HomeScreenActivity.this, SkinResultsActivity.class);//yasmin add your page
+           // intent.putExtra("captured_image", byteArray);  // Pass the ByteArray to the next activity
             startActivity(intent);
         }
     }
