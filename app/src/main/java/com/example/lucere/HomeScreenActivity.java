@@ -2,19 +2,22 @@ package com.example.lucere;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.widget.ImageView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import java.io.ByteArrayOutputStream;
 
 public class HomeScreenActivity extends AppCompatActivity {
 
     private static final int REQUEST_IMAGE_CAPTURE = 1;
     private ImageView imageView;
-    private ImageView cameraIcon; // Add this line
+    private ImageView cameraIcon;
     private Toolbar toolbar;
+    private Bitmap capturedImageBitmap;  // Variable to store the captured image
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,8 +49,17 @@ public class HomeScreenActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
             Bundle extras = data.getExtras();
-            Bitmap imageBitmap = (Bitmap) extras.get("data");
-            imageView.setImageBitmap(imageBitmap);
+            capturedImageBitmap = (Bitmap) extras.get("data");  // Save the image in a variable
+            imageView.setImageBitmap(capturedImageBitmap);  // Display the image
+
+            // Convert the Bitmap to ByteArray and pass it to the next activity
+            ByteArrayOutputStream stream = new ByteArrayOutputStream();
+            capturedImageBitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
+            byte[] byteArray = stream.toByteArray();
+
+            Intent intent = new Intent(HomeScreenActivity.this, HomeScreenActivity.class);//yasmin add your page
+            intent.putExtra("captured_image", byteArray);  // Pass the ByteArray to the next activity
+            startActivity(intent);
         }
     }
 
