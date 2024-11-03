@@ -71,7 +71,7 @@ public class HomeScreenActivity extends AppCompatActivity {
         return result;
     }
     private void openProfilePage(){
-        Intent intent = new Intent(this, SetUpProfileActivity.class);
+        Intent intent = new Intent(this, ProfileActivity.class);
         startActivity(intent);
     }
 }
