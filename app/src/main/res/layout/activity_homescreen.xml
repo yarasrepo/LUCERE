@@ -12,7 +12,7 @@
     <!-- Toolbar -->
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/background2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
@@ -57,8 +57,8 @@
         android:src="@drawable/baseline_camera_alt_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/imageView" />
+        app:layout_constraintStart_toStartOf="@+id/background2"
+        app:layout_constraintTop_toTopOf="@+id/background2" />
 
     <androidx.constraintlayout.helper.widget.Layer
         android:id="@+id/layer"

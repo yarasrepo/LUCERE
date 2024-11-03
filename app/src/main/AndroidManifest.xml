@@ -34,6 +34,7 @@
         <activity android:name=".HomeScreenActivity" android:exported="true"/>
         <activity android:name=".CreateAccountActivity"/>
         <activity android:name=".SetUpProfileActivity"/>
+
     </application>
 
 </manifest>
