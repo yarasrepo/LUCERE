@@ -78,8 +78,8 @@ public class SetUpProfileActivity extends AppCompatActivity {
     }
 
     private void goToHome() {
-//        Intent intent = new Intent(SetUpProfileActivity.this, HomeActivity.class); // Adjust this to your home activity
-//        startActivity(intent);
-//        finish(); // Optional: finish this activity if you want to remove it from the back stack
+        Intent intent = new Intent(SetUpProfileActivity.this, HomeScreenActivity.class); // Adjust this to your home activity
+        startActivity(intent);
+        finish(); // Optional: finish this activity if you want to remove it from the back stack
     }
 }
