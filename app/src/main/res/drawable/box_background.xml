@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Background color of the input box -->
+    <solid android:color="#FFECCE" />
+
+    <!-- Border of the input box -->
+    <stroke
+        android:width="2dp"
+        android:color="#FFFFFF" /> <!-- Black border -->
+
+    <!-- Corner radius to make the edges rounded -->
+    <corners android:radius="50dp" />
+
+    <!-- Padding inside the input box -->
+    <padding
+        android:left="10dp"
+        android:top="10dp"
+        android:right="10dp"
+        android:bottom="10dp" />
+</shape>
