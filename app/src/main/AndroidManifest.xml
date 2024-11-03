@@ -13,7 +13,7 @@
         android:theme="@style/Theme.Lucere"
         tools:targetApi="31">
         <activity
-            android:name=".LoginActivity"
+            android:name=".SetUpProfileActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,6 +22,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".CreateAccountActivity"/>
+<!--        <activity android:name=".SetUpProfileActivity"/>-->
     </application>
 
 </manifest>

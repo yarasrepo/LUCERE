@@ -63,7 +63,7 @@ public class CreateAccountActivity extends AppCompatActivity {
                     Toast.makeText(CreateAccountActivity.this, "Account created successfully!", Toast.LENGTH_SHORT).show();
 
                     // Optionally redirect to login or main activity after account creation
-                    Intent intent = new Intent(CreateAccountActivity.this, LoginActivity.class);
+                    Intent intent = new Intent(CreateAccountActivity.this, SetUpProfileActivity.class);
                     startActivity(intent);
                     finish(); // Close the CreateAccountActivity
                 }

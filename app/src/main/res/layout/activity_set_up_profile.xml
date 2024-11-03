@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_bg">
+
+    <LinearLayout
+        android:id="@+id/setUpProfileBox"
+        android:layout_width="320dp"
+        android:layout_height="450dp"
+        android:alpha="0.7"
+        android:visibility="visible"
+        android:background="@drawable/rounded_box"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.52"
+        tools:visibility="visible">
+
+        <!-- Using LinearLayout inside CardView for vertical alignment -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Email Label and EditText -->
+
+            <TextView
+                android:id="@+id/setUpProfileTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:text="SET UP PROFILE"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="#FFECCE"
+                android:textSize="30sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="16dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Email Label -->
+                <TextView
+                    android:id="@+id/fullNameLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:text="Full Name"
+                    android:textColor="#FFFFFF"
+                    android:textSize="12sp" /> <!-- Small space between label and input -->
+
+                <!-- First EditText for Email -->
+                <EditText
+                    android:id="@+id/editFullName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/box_background"
+                    android:ems="10"
+                    android:hint="Full Name"
+                    android:inputType="text"
+                    android:minHeight="48dp"
+                    android:textColorHint="@color/brown"
+                    android:textSize="14sp"
+                    android:visibility="visible" />
+            </LinearLayout>
+
+            <!-- Space between Email and Password fields -->
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="16dp" />
+
+            <!-- Password Label and EditText -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Password Label -->
+                <!-- Small space between label and input -->
+
+                <!-- Second EditText for Password -->
+                <TextView
+                    android:id="@+id/skinTypeLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:text="Skin Type"
+                    android:textColor="#FFFFFF"
+                    android:textSize="12sp" />
+
+                <Spinner
+                    android:id="@+id/spinnerSkinType"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="48dp"
+                    android:background="@drawable/box_background"
+                    android:visibility="visible" />
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="16dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Birth Year Label -->
+                <TextView
+                    android:id="@+id/birthYearLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:text="Birth Year"
+                    android:textColor="#FFFFFF"
+                    android:textSize="12sp" />
+
+                <!-- Spinner for Birth Year -->
+                <Spinner
+                    android:id="@+id/spinnerBirthYear"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/box_background"
+                    android:minHeight="48dp"
+                    android:textColorHint="@color/brown"
+                    android:visibility="visible" />
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="16dp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="10dp"> <!-- Center vertically if needed -->
+
+                <TextView
+                    android:id="@+id/skip_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="20dp"
+                    android:text="SKIP"
+                    android:textColor="@color/brown"
+                    android:background="@drawable/btn_background"
+                    android:layout_gravity="start"
+                    android:layout_margin="20dp"/> <!-- Optional for alignment -->
+
+                <TextView
+                    android:id="@+id/next_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="20dp"
+                    android:text="NEXT"
+                    android:textColor="@color/brown"
+                    android:background="@drawable/btn_background"
+                    android:layout_gravity="end"
+                    android:layout_margin="20dp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
