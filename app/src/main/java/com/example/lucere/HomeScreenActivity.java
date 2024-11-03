@@ -17,7 +17,7 @@ public class HomeScreenActivity extends AppCompatActivity {
     private ImageView cameraIcon;
     private Toolbar toolbar;
     private Bitmap capturedImageBitmap;  // Variable to store the captured image
-
+    private ImageView profileIcon;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,10 +26,10 @@ public class HomeScreenActivity extends AppCompatActivity {
         imageView = findViewById(R.id.imageView);
         cameraIcon = findViewById(R.id.image_camera);
         toolbar = findViewById(R.id.toolbar);
-
+        profileIcon = findViewById(R.id.profileIcon);
         // Set the OnClickListener for the camera icon
         cameraIcon.setOnClickListener(v -> openCamera());
-
+        profileIcon.setOnClickListener(v -> openProfilePage());
         if (toolbar != null) {
             int statusBarHeight = getStatusBarHeight();
             toolbar.setPadding(0, statusBarHeight, 0, 0);
@@ -69,5 +69,9 @@ public class HomeScreenActivity extends AppCompatActivity {
             result = getResources().getDimensionPixelSize(resourceId);
         }
         return result;
+    }
+    private void openProfilePage(){
+        Intent intent = new Intent(this, SetUpProfileActivity.class);
+        startActivity(intent);
     }
 }
