@@ -17,4 +17,5 @@ public class SkinResultsActivity extends AppCompatActivity {
         Intent intent = new Intent(this, SetUpProfileActivity.class);
         startActivity(intent);
     }
+
 }

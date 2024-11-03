@@ -7,4 +7,9 @@
         <item>Combination</item>
         <item>Sensitive</item>
     </string-array>
+
+    <string-array name="gender_options">
+        <item>Female</item>
+        <item>Male</item>
+    </string-array>
 </resources>

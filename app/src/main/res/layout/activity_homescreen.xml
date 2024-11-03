@@ -12,7 +12,7 @@
     <!-- Toolbar -->
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/background2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
@@ -20,28 +20,29 @@
         tools:layout_editor_absoluteX="-32dp"
         tools:layout_editor_absoluteY="-168dp" />
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/brown"
-        android:minHeight="?attr/actionBarSize"
-        android:visibility="visible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <!-- Profile Icon inside Toolbar for Top-Left Alignment -->
-        <ImageView
-            android:id="@+id/profileIcon"
-            android:layout_width="51dp"
-            android:layout_height="55dp"
-            android:layout_margin="8dp"
-            android:contentDescription="Profile Icon"
-            android:src="@drawable/profile" />
-    </androidx.appcompat.widget.Toolbar>
-
     <!-- Camera Icon as Clickable ImageView -->
+
+    <!-- Profile Icon inside Toolbar for Top-Left Alignment -->
+
+
+    <ImageView
+        android:id="@+id/profileIcon"
+        android:layout_width="51dp"
+        android:layout_height="55dp"
+        android:layout_margin="8dp"
+        android:layout_marginStart="352dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="668dp"
+        android:background="@color/brown"
+        android:contentDescription="Profile Icon"
+        android:src="@drawable/profile"
+        app:layout_constraintBottom_toBottomOf="@+id/background2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/background2"
+        app:layout_constraintTop_toTopOf="@+id/background2"
+        app:layout_constraintVertical_bias="0.0" />
+
     <ImageView
         android:id="@+id/image_camera"
         android:layout_width="73dp"
@@ -57,15 +58,7 @@
         android:src="@drawable/baseline_camera_alt_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/imageView" />
-
-    <androidx.constraintlayout.helper.widget.Layer
-        android:id="@+id/layer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:constraint_referenced_ids="toolbar"
-        tools:layout_editor_absoluteX="-16dp"
-        tools:layout_editor_absoluteY="0dp" />
+        app:layout_constraintStart_toStartOf="@+id/background2"
+        app:layout_constraintTop_toTopOf="@+id/background2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
