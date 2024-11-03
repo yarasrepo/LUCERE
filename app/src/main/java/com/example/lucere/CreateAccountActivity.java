@@ -18,7 +18,7 @@ public class CreateAccountActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_create_account); // Make sure this XML file is correct
+        setContentView(R.layout.activity_create_account);
 
         // Initialize UI elements
         EditText emailEditText = findViewById(R.id.editEmail);
@@ -43,7 +43,7 @@ public class CreateAccountActivity extends AppCompatActivity {
         // Set the span for "Login"
         spannableString.setSpan(clickableSpan, 25, 30, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         footerTextView.setText(spannableString);
-        footerTextView.setMovementMethod(LinkMovementMethod.getInstance());  // Enable clicking
+        footerTextView.setMovementMethod(LinkMovementMethod.getInstance());
 
         // Set click listener for the Create Account button
         createAccountButton.setOnClickListener(new View.OnClickListener() {
@@ -62,12 +62,13 @@ public class CreateAccountActivity extends AppCompatActivity {
                     // Handle account creation (e.g., saving user data, calling APIs, etc.)
                     Toast.makeText(CreateAccountActivity.this, "Account created successfully!", Toast.LENGTH_SHORT).show();
 
-                    // Optionally redirect to login or main activity after account creation
-                    Intent intent = new Intent(CreateAccountActivity.this, LoginActivity.class);
+                    // Redirect to HomeScreenActivity after account creation
+                    Intent intent = new Intent(CreateAccountActivity.this, HomeScreenActivity.class);
                     startActivity(intent);
                     finish(); // Close the CreateAccountActivity
                 }
             }
         });
     }
+
 }
