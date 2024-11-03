@@ -37,7 +37,12 @@
         <activity android:name=".HomeScreenActivity" android:exported="true"/>
         <activity android:name=".CreateAccountActivity"/>
         <activity android:name=".SetUpProfileActivity"/>
+<<<<<<< HEAD
         <activity android:name=".ProductsActivity" android:exported="true"/>
+=======
+        <activity android:name=".ProfileActivity"/>
+        <activity android:name=".EditProfileActivity"/>
+>>>>>>> 746c9eaae98858ab3d8d9cd4f1ca4c382cb70bbf
     </application>
 
 </manifest>
