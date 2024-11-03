@@ -23,7 +23,7 @@ public class HomeScreenActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homescreen);
 
-        imageView = findViewById(R.id.imageView);
+        imageView = findViewById(R.id.background2);
         cameraIcon = findViewById(R.id.image_camera);
         toolbar = findViewById(R.id.toolbar);
         profileIcon = findViewById(R.id.profileIcon);

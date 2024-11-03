@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProductsActivity">
+
+    <!-- Background Image Filling Entire Screen -->
+    <ImageView
+        android:id="@+id/products_background_imageview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/diagnosis" />
+
+    <TextView
+        android:id="@+id/product_title_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Salicylic Acid 10% products"
+        android:textColor="@color/design_default_color_background"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/products_background_imageview"
+        app:layout_constraintHorizontal_bias="0.578"
+        app:layout_constraintStart_toStartOf="@id/products_background_imageview"
+        app:layout_constraintTop_toTopOf="@id/products_background_imageview"
+        app:layout_constraintVertical_bias="0.133" />
+
+    <ImageView
+        android:id="@+id/box_imageview"
+        android:layout_width="300dp"
+        android:layout_height="605dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="176dp"
+        android:layout_marginEnd="56dp"
+        android:layout_marginBottom="110dp"
+        app:layout_constraintBottom_toBottomOf="@id/products_background_imageview"
+        app:layout_constraintEnd_toEndOf="@id/products_background_imageview"
+        app:layout_constraintStart_toStartOf="@id/products_background_imageview"
+        app:layout_constraintTop_toTopOf="@id/products_background_imageview"
+        app:srcCompat="@drawable/box" />
+
+    <ImageView
+        android:id="@+id/first_product_imageview"
+        android:layout_width="93dp"
+        android:layout_height="110dp"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="121dp"
+        android:layout_marginEnd="103dp"
+        android:layout_marginBottom="374dp"
+        app:layout_constraintBottom_toBottomOf="@id/box_imageview"
+        app:layout_constraintEnd_toEndOf="@id/box_imageview"
+        app:layout_constraintStart_toStartOf="@id/box_imageview"
+        app:layout_constraintTop_toTopOf="@id/box_imageview"
+        app:srcCompat="@drawable/ordinary" />
+
+    <TextView
+        android:id="@+id/first_product_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="243dp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginBottom="335dp"
+        android:text="The Ordinary - Salicylic Acid"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/box_imageview"
+        app:layout_constraintEnd_toEndOf="@id/box_imageview"
+        app:layout_constraintStart_toStartOf="@id/box_imageview"
+        app:layout_constraintTop_toTopOf="@id/box_imageview" />
+
+    <ImageView
+        android:id="@+id/second_product_imageview"
+        android:layout_width="95dp"
+        android:layout_height="110dp"
+        android:layout_marginStart="102dp"
+        android:layout_marginTop="313dp"
+        android:layout_marginEnd="103dp"
+        android:layout_marginBottom="182dp"
+        app:layout_constraintBottom_toBottomOf="@id/box_imageview"
+        app:layout_constraintEnd_toEndOf="@id/box_imageview"
+        app:layout_constraintStart_toStartOf="@id/box_imageview"
+        app:layout_constraintTop_toTopOf="@id/box_imageview"
+        app:srcCompat="@drawable/larocheposay" />
+
+    <TextView
+        android:id="@+id/second_product_description_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="442dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="136dp"
+        android:text="La Roche-Posay Miracle Cream"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/box_imageview"
+        app:layout_constraintEnd_toEndOf="@id/box_imageview"
+        app:layout_constraintStart_toStartOf="@id/box_imageview"
+        app:layout_constraintTop_toTopOf="@id/box_imageview" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
