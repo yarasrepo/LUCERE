@@ -31,6 +31,9 @@
         </activity>
 
         <!-- HomeScreen and CreateAccountActivity -->
+        <activity android:name=".SkinResultsActivity"
+            android:exported="true" /> <!-- Add this line -->
+
         <activity android:name=".HomeScreenActivity" android:exported="true"/>
         <activity android:name=".CreateAccountActivity"/>
         <activity android:name=".SetUpProfileActivity"/>
