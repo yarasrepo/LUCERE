@@ -5,6 +5,8 @@ import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.widget.ImageView;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -15,9 +17,35 @@ public class HomeScreenActivity extends AppCompatActivity {
     private static final int REQUEST_IMAGE_CAPTURE = 1;
     private ImageView imageView;
     private ImageView cameraIcon;
-    private Toolbar toolbar;
+
     private Bitmap capturedImageBitmap;  // Variable to store the captured image
     private ImageView profileIcon;
+
+    // ActivityResultLauncher for the camera
+    private final ActivityResultLauncher<Intent> cameraLauncher = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            result -> {
+                if (result.getResultCode() == RESULT_OK) {
+                    Intent data = result.getData();
+                    if (data != null) {
+                        // Capture the image and display
+                        Bundle extras = data.getExtras();
+                        capturedImageBitmap = (Bitmap) extras.get("data");
+                        imageView.setImageBitmap(capturedImageBitmap);
+
+                        // Convert to byte array and pass to the next activity
+                        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+                        capturedImageBitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
+                        byte[] byteArray = stream.toByteArray();
+
+                        Intent intent = new Intent(HomeScreenActivity.this, SkinResultsActivity.class);
+                        intent.putExtra("captured_image", byteArray);
+                        startActivity(intent);
+                    }
+                }
+            }
+    );
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,40 +53,19 @@ public class HomeScreenActivity extends AppCompatActivity {
 
         imageView = findViewById(R.id.background2);
         cameraIcon = findViewById(R.id.image_camera);
-        toolbar = findViewById(R.id.toolbar);
+
         profileIcon = findViewById(R.id.profileIcon);
+
         // Set the OnClickListener for the camera icon
         cameraIcon.setOnClickListener(v -> openCamera());
         profileIcon.setOnClickListener(v -> openProfilePage());
-        if (toolbar != null) {
-            int statusBarHeight = getStatusBarHeight();
-            toolbar.setPadding(0, statusBarHeight, 0, 0);
-        }
+
     }
 
     private void openCamera() {
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
-            startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
-        }
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
-//            Bundle extras = data.getExtras();
-//            capturedImageBitmap = (Bitmap) extras.get("data");  // Save the image in a variable
-//            imageView.setImageBitmap(capturedImageBitmap);  // Display the image
-//
-//            // Convert the Bitmap to ByteArray and pass it to the next activity
-//            ByteArrayOutputStream stream = new ByteArrayOutputStream();
-//            capturedImageBitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
-//            byte[] byteArray = stream.toByteArray();
-
-            Intent intent = new Intent(HomeScreenActivity.this, SkinResultsActivity.class);//yasmin add your page
-           // intent.putExtra("captured_image", byteArray);  // Pass the ByteArray to the next activity
-            startActivity(intent);
+            cameraLauncher.launch(takePictureIntent);
         }
     }
 
@@ -70,7 +77,8 @@ public class HomeScreenActivity extends AppCompatActivity {
         }
         return result;
     }
-    private void openProfilePage(){
+
+    private void openProfilePage() {
         Intent intent = new Intent(this, ProfileActivity.class);
         startActivity(intent);
     }
