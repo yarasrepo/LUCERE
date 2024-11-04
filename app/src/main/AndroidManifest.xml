@@ -39,6 +39,7 @@
         <activity android:name=".SetUpProfileActivity"/>
         <activity android:name=".DiagnosisActivity" android:exported="true"/>
         <activity android:name=".ProfileActivity" />
+        <activity android:name=".EditProfileActivity"/>
         <activity android:name=".ProductsActivity" android:exported="true"/>
     </application>
 
