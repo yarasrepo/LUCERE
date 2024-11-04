@@ -99,13 +99,14 @@
                 android:id="@+id/ingredient_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/btn_background"
+                android:background="@color/beige"
                 android:paddingHorizontal="20dp"
-                android:text="Salicyclic Acid 10%"
+                android:text="Salicylic Acid 10%"
                 android:textColor="@color/brown"
                 android:textSize="26sp"
                 android:textStyle="bold"
-                android:clickable="true"/>
+                android:clickable="true" />
+
 
         </LinearLayout>
 

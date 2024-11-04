@@ -19,17 +19,17 @@ public class DiagnosisActivity extends AppCompatActivity {
 
         ImageButton profileButton = findViewById(R.id.userButton);
         profileButton.setOnClickListener(v -> {
-            // Create an Intent to navigate to the ProfileActivity
+            // Navigate to the ProfileActivity
             Intent intent = new Intent(DiagnosisActivity.this, ProfileActivity.class);
             startActivity(intent);
         });
 
-        /*TextView ingredientButton = findViewById(R.id.ingredient_btn);
+        // Find the ingredient button and set its click listener
+        TextView ingredientButton = findViewById(R.id.ingredient_btn);
         ingredientButton.setOnClickListener(v -> {
-                // Create an Intent to navigate to the Salicylic Acid Activity (file name to be changed)
-                Intent intent = new Intent(DiagnosisActivity.this, SalicylicAcidActivity.class);
-                startActivity(intent);
-        });*/
+            // Navigate to the ProductsActivity
+            Intent intent = new Intent(DiagnosisActivity.this, ProductsActivity.class);
+            startActivity(intent);
+        });
     }
 }
-
