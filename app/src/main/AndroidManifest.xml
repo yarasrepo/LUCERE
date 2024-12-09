@@ -41,6 +41,7 @@
         <activity android:name=".ProfileActivity" />
         <activity android:name=".EditProfileActivity"/>
         <activity android:name=".ProductsActivity" android:exported="true"/>
+        <activity android:name=".ProductListActivity" android:exported="true"/>
     </application>
 
 </manifest>
