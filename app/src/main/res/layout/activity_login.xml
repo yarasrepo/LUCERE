@@ -69,7 +69,6 @@
                     android:hint="Email"
                     android:inputType="textEmailAddress"
                     android:minHeight="48dp"
-                    android:textColor="@color/blue"
                     android:textColorHint="@color/blue"
                     android:textSize="14sp"
                     android:visibility="visible" />
@@ -109,7 +108,6 @@
                     android:hint="Password"
                     android:inputType="textPassword"
                     android:minHeight="48dp"
-                    android:textColor="@color/blue"
                     android:textColorHint="@color/blue"
                     android:textSize="14sp"
                     android:visibility="visible" />
@@ -127,20 +125,19 @@
                 android:paddingHorizontal="20dp"
                 android:text="LOGIN"
                 android:textColor="@color/blue"
-                android:background="@drawable/btn_background" />
+                android:background="@drawable/btn_background"/>
+
 
             <TextView
                 android:id="@+id/login_footer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Don’t have an account? Create Account"
-                android:textColor="@color/dark_blue"
-                android:textColorLink="@color/dark_blue" />
+                android:textColor="@color/white"
+                android:textColorLink="@color/blue" />
 
         </LinearLayout>
 
     </LinearLayout>
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
