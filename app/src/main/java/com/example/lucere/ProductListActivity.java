@@ -36,7 +36,7 @@ public class ProductListActivity extends AppCompatActivity {
 
 //        // Fetch products
 //        fetchAllProducts();
-        fetchProductsByIngredient("niacinamide");
+        fetchProductsByIngredient("Glycerin");
     }
     private void fetchAllProducts() {
         RetrofitClient.getInstance().getProductService().getAllProducts()
