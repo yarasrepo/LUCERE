@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 public class SkinResultsActivity extends AppCompatActivity {
@@ -16,7 +18,7 @@ public class SkinResultsActivity extends AppCompatActivity {
 
         // Find the profile button and eczema button by their IDs
         ImageButton profileButton = findViewById(R.id.profileButton);
-        Button buttonEczema = findViewById(R.id.buttonEczema);
+        TextView buttonEczema = findViewById(R.id.buttonEczema);
 
         // Set an OnClickListener to open DiagnosisActivity
         buttonEczema.setOnClickListener(new View.OnClickListener() {

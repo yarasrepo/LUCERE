@@ -1,12 +1,9 @@
 package com.example.lucere;
 
-import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -14,49 +11,50 @@ import java.util.List;
 
 public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductViewHolder> {
 
-    private Context context;
-    private List<Product> productList;
+    private List<ProductModel> productList;
 
-    public ProductAdapter(Context context, List<Product> productList) {
-        this.context = context;
+    // Constructor to initialize the product list
+    public ProductAdapter(List<ProductModel> productList) {
         this.productList = productList;
     }
 
     @NonNull
     @Override
     public ProductViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.activity_product_card, parent, false);
+        // Inflate the layout for each item in the RecyclerView
+        View view = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.activity_product_card, parent, false);
         return new ProductViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ProductViewHolder holder, int position) {
-        Product product = productList.get(position);
-        holder.productName.setText(product.getName());
-        holder.productUrl.setText(product.getUrl());
-        holder.productType.setText("Type: " + product.getType());
+        // Get the current product
+        ProductModel product = productList.get(position);
+        Log.d("ProductAdapter", "Binding Product: " + product.toString());
 
-        holder.productUrl.setOnClickListener(v -> {
-            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(product.getUrl()));
-            context.startActivity(browserIntent);
-        });
+        // Bind data to the views
+        holder.productName.setText(product.getProductName());
+        holder.productType.setText(product.getProductType());
+        holder.productUrl.setText(product.getProductUrl());
     }
 
     @Override
     public int getItemCount() {
+        // Return the size of the product list
         return productList.size();
     }
 
+    // ViewHolder class to hold references to the views in each item
     public static class ProductViewHolder extends RecyclerView.ViewHolder {
-        TextView productName, productUrl, productType;
-        ImageView productImage;
+
+        TextView productName, productType, productUrl;
 
         public ProductViewHolder(@NonNull View itemView) {
             super(itemView);
-            productName = itemView.findViewById(R.id.product_name);
-            productUrl = itemView.findViewById(R.id.product_url);
-            productType = itemView.findViewById(R.id.product_type);
-            productImage = itemView.findViewById(R.id.product_image);
+            productName = itemView.findViewById(R.id.productName);
+            productType = itemView.findViewById(R.id.productType);
+            productUrl = itemView.findViewById(R.id.productUrl);
         }
     }
 }
