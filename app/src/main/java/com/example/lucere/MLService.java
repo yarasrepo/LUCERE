@@ -7,8 +7,9 @@ import retrofit2.http.POST;
 import retrofit2.http.Part;
 import okhttp3.MultipartBody;
 
+
 public interface MLService {
     @Multipart
-    @POST("/predict")
-    Call<ResponseBody> uploadImage(@Part MultipartBody.Part file);
+    @POST("predict/")
+    Call<PredictionResponse> uploadImage(@Part MultipartBody.Part file);
 }
