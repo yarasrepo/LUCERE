@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/diagnosis_new_bg"
+        android:src="@drawable/diagnosis_new"
         android:contentDescription="Background Image" />
     <!-- Toolbar -->
     <androidx.appcompat.widget.Toolbar
