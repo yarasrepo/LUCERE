@@ -14,6 +14,8 @@ public class SkinResultsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.skinresults);  // Load the skinresults layout
 
+        String predictionResult = getIntent().getStringExtra("prediction_result");
+
         // Find the profile button and eczema button by their IDs
         ImageButton profileButton = findViewById(R.id.profileButton);
         Button buttonEczema = findViewById(R.id.buttonEczema);

@@ -7,8 +7,8 @@
         android:name="android.hardware.camera"
         android:required="false" />
     <uses-permission android:name="android.permission.CAMERA"/>
-    <uses-permission android:name = "android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -33,14 +33,14 @@
 
         <!-- HomeScreen and CreateAccountActivity -->
         <activity android:name=".SkinResultsActivity"
-            android:exported="true" /> <!-- Add this line -->
+            android:exported="true"/> <!-- Add this line -->
 
         <activity android:name=".HomeScreenActivity" android:exported="true"/>
         <activity android:name=".CreateAccountActivity"/>
         <activity android:name=".SetUpProfileActivity"/>
         <activity android:name=".ProductListActivity" android:exported="true"/>
         <activity android:name=".DiagnosisActivity" android:exported="true"/>
-        <activity android:name=".ProfileActivity" />
+        <activity android:name=".ProfileActivity" android:exported="true"/>
         <activity android:name=".EditProfileActivity"/>
         <activity android:name=".ProductsActivity" android:exported="true"/>
     </application>
