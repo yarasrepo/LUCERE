@@ -69,6 +69,7 @@
                     android:hint="Full Name"
                     android:inputType="text"
                     android:minHeight="48dp"
+                    android:textColor="@color/blue"
                     android:textColorHint="@color/blue"
                     android:textSize="14sp"
                     android:visibility="visible" />
@@ -102,6 +103,7 @@
                     android:layout_height="wrap_content"
                     android:minHeight="48dp"
                     android:background="@drawable/box_background"
+                    android:textColorHint="@color/blue"
                     android:visibility="visible" />
 
             </LinearLayout>
