@@ -1,5 +1,5 @@
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/resultsLayout"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
@@ -14,31 +14,31 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/skinanalysis"
+        android:src="@drawable/diagnosis_new_bg"
         android:contentDescription="Background Image" />
     <!-- Toolbar -->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/brown"
-    android:minHeight="?attr/actionBarSize"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" >
+        android:background="@color/dark_blue"
+        android:minHeight="?attr/actionBarSize"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" >
 
-    <!-- Profile Icon as a Button -->
+        <!-- Profile Icon as a Button -->
         <ImageButton
             android:id="@+id/profileButton"
-            android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:background="@android:color/transparent"
-        android:src="@drawable/profile"
-        android:contentDescription="Profile Icon"
-        android:padding="4dp"
-        android:scaleType="fitCenter"
-        android:layout_gravity="start" />
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/profile"
+            android:backgroundTint="@color/blue"
+            android:contentDescription="Profile Icon"
+            android:padding="4dp"
+            android:scaleType="fitCenter"
+            android:layout_gravity="start" />
 
 
     </androidx.appcompat.widget.Toolbar>
@@ -49,133 +49,154 @@
     <!-- Semi-Transparent Rounded Rectangle at the Bottom -->
 
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/overlay"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:background="@drawable/rounded_rectangle_background"
-        android:padding="16dp"
+    <LinearLayout
+        android:id="@+id/Box"
+        android:layout_width="360dp"
+        android:layout_height="550dp"
+        android:alpha="0.7"
+        android:visibility="visible"
+        android:background="@drawable/rounded_box"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <!-- Title Text -->
-        <TextView
-            android:id="@+id/title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Your Skin Diagnosis"
-            android:textColor="@android:color/white"
-            android:textSize="24sp"
-            android:textStyle="bold"
-
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.52"
+        tools:visibility="visible">
 
-        <!-- Buttons for Diagnosis -->
-        <Button
-            android:id="@+id/buttonEczema"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/beige"
-            android:text="Eczema"
-            android:textColor="#9c663e"
-            android:padding="12dp"
-            android:textAllCaps="false"
-            app:layout_constraintEnd_toStartOf="@id/buttonDehydration"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/title"
-            android:layout_marginTop="16dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="16dp">
+            <!-- Title Text -->
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Your Skin Diagnosis"
+                android:textColor="@color/dark_blue"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/buttonDehydration"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/beige"
-            android:text="Dehydration"
-            android:textColor="#9c663e"
-            android:padding="12dp"
-            android:textAllCaps="false"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/buttonEczema"
-            app:layout_constraintTop_toBottomOf="@id/title"
-            android:layout_marginTop="16dp" />
+            <!-- Buttons for Diagnosis -->
+            <TextView
+                android:id="@+id/buttonEczema"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/btn_background"
+                android:padding="12dp"
+                android:text="Eczema"
+                android:textColor="@color/blue"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:clickable="true"
+                app:layout_constraintEnd_toStartOf="@id/buttonDehydration"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/title" />
 
-        <Button
-            android:id="@+id/buttonHyperPigmentation"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/beige"
-            android:text="Hyper Pigmentation"
-            android:textColor="#9c663e"
-            android:padding="12dp"
-            android:textAllCaps="false"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/buttonEczema"
-            android:layout_marginTop="16dp" />
+            <TextView
+                android:id="@+id/buttonDehydration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/btn_background"
+                android:padding="12dp"
+                android:text="Dehydration"
+                android:textColor="@color/blue"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:clickable="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/buttonEczema"
+                app:layout_constraintTop_toBottomOf="@id/title" />
 
-        <!-- Title for Recommended Ingredients -->
-        <TextView
-            android:id="@+id/ingredientsTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Recommended Ingredients"
-            android:textColor="@android:color/white"
-            android:textSize="20sp"
-            android:textStyle="bold"
+            <TextView
+                android:id="@+id/buttonHyperPigmentation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/btn_background"
+                android:padding="12dp"
+                android:text="Hyper Pigmentation"
+                android:textColor="@color/blue"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:clickable="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/buttonEczema" />
 
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/buttonHyperPigmentation"
-        android:layout_marginTop="24dp" />
+            <!-- Title for Recommended Ingredients -->
+            <TextView
+                android:id="@+id/ingredientsTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Recommended Ingredients"
+                android:textColor="@color/dark_blue"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/buttonHyperPigmentation" />
 
-        <!-- Buttons for Recommended Ingredients -->
-        <Button
-            android:id="@+id/buttonSalicylicAcid"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/beige"
-            android:text="Salicylic Acid 10%"
-            android:textColor="#9c663e"
-            android:padding="12dp"
-            android:textAllCaps="false"
-            app:layout_constraintEnd_toStartOf="@id/buttonCaffeine"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/ingredientsTitle"
-            android:layout_marginTop="16dp" />
+            <!-- Buttons for Recommended Ingredients -->
+            <TextView
+                android:id="@+id/buttonSalicylicAcid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/btn_background"
+                android:padding="12dp"
+                android:text="Salicylic Acid 10%"
+                android:textColor="@color/blue"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:clickable="true"
+                app:layout_constraintEnd_toStartOf="@id/buttonCaffeine"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ingredientsTitle" />
 
-        <Button
-            android:id="@+id/buttonCaffeine"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/beige"
-            android:text="Caffeine 15%"
-            android:textColor="#9c663e"
-            android:padding="12dp"
-            android:textAllCaps="false"
-            app:layout_constraintEnd_toStartOf="@id/buttonRetinaldehyde"
-            app:layout_constraintStart_toEndOf="@id/buttonSalicylicAcid"
-            app:layout_constraintTop_toBottomOf="@id/ingredientsTitle"
-            android:layout_marginTop="16dp" />
+            <TextView
+                android:id="@+id/buttonCaffeine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/btn_background"
+                android:padding="12dp"
+                android:text="Caffeine 15%"
+                android:textColor="@color/blue"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:clickable="true"
+                app:layout_constraintEnd_toStartOf="@id/buttonRetinaldehyde"
+                app:layout_constraintStart_toEndOf="@id/buttonSalicylicAcid"
+                app:layout_constraintTop_toBottomOf="@id/ingredientsTitle" />
 
-        <Button
-            android:id="@+id/buttonRetinaldehyde"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/beige"
-            android:text="Retinaldehyde"
-            android:textColor="#9c663e"
-            android:padding="12dp"
-            android:textAllCaps="false"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/buttonCaffeine"
-            app:layout_constraintTop_toBottomOf="@id/ingredientsTitle"
-            android:layout_marginTop="16dp" />
+            <TextView
+                android:id="@+id/buttonRetinaldehyde"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/btn_background"
+                android:padding="12dp"
+                android:text="Retinaldehyde"
+                android:textColor="@color/blue"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:clickable="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/buttonCaffeine"
+                app:layout_constraintTop_toBottomOf="@id/ingredientsTitle" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
 
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

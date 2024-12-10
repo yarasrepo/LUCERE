@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/diagnosis_background">
+    android:background="@drawable/diagnosis_new_bg">
 
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/brown"
+        android:background="@color/dark_blue"
         android:minHeight="?attr/actionBarSize"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,10 +21,10 @@
         <!-- Profile Icon as a Button -->
         <ImageButton
             android:id="@+id/userButton"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:background="@android:color/transparent"
-            android:src="@drawable/profile"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:backgroundTint="@color/blue"
+            android:background="@drawable/profile"
             android:contentDescription="Profile Icon"
             android:padding="4dp"
             android:scaleType="fitCenter"
@@ -34,13 +34,13 @@
     </androidx.appcompat.widget.Toolbar>
 
 
-    <androidx.cardview.widget.CardView
+    <LinearLayout
         android:id="@+id/Box"
         android:layout_width="360dp"
         android:layout_height="550dp"
+        android:alpha="0.7"
         android:visibility="visible"
-        app:cardBackgroundColor="#B3995E40"
-        app:cardCornerRadius="50dp"
+        android:background="@drawable/rounded_box"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
@@ -62,7 +62,7 @@
                 android:layout_height="wrap_content"
                 android:paddingBottom="16dp"
                 android:text="ECZEMA"
-                android:textColor="@color/beige"
+                android:textColor="@color/dark_blue"
                 android:textSize="48sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -76,7 +76,7 @@
                 android:paddingTop="16dp"
                 android:paddingBottom="16dp"
                 android:text="Eczema is a chronic skin condition causing dry, itchy, and inflamed skin. It’s triggered by irritants, allergens, or stress, but with proper care and treatment, flare-ups can be managed effectively."
-                android:textColor="@color/beige"
+                android:textColor="@color/dark_blue"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -89,7 +89,7 @@
                 android:paddingTop="16dp"
                 android:paddingBottom="16dp"
                 android:text="Recommended Ingredient"
-                android:textColor="@color/beige"
+                android:textColor="@color/dark_blue"
                 android:textSize="26sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -99,10 +99,10 @@
                 android:id="@+id/ingredient_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@color/beige"
+                android:background="@drawable/btn_background"
                 android:paddingHorizontal="20dp"
-                android:text="glycerin"
-                android:textColor="@color/brown"
+                android:text="Glycerine"
+                android:textColor="@color/blue"
                 android:textSize="26sp"
                 android:textStyle="bold"
                 android:clickable="true" />
@@ -110,6 +110,6 @@
 
         </LinearLayout>
 
-    </androidx.cardview.widget.CardView>
+    </LinearLayout>
     
 </androidx.constraintlayout.widget.ConstraintLayout>
