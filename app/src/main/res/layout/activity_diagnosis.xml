@@ -101,7 +101,7 @@
                 android:layout_height="wrap_content"
                 android:background="@color/beige"
                 android:paddingHorizontal="20dp"
-                android:text="Salicylic Acid 10%"
+                android:text="Salicylic"
                 android:textColor="@color/brown"
                 android:textSize="26sp"
                 android:textStyle="bold"

@@ -28,7 +28,7 @@ public class DiagnosisActivity extends AppCompatActivity {
         TextView ingredientButton = findViewById(R.id.ingredient_btn);
         ingredientButton.setOnClickListener(v -> {
             // Navigate to the ProductsActivity
-            Intent intent = new Intent(DiagnosisActivity.this, ProductsActivity.class);
+            Intent intent = new Intent(DiagnosisActivity.this, ProductListActivity.class);
             startActivity(intent);
         });
     }
