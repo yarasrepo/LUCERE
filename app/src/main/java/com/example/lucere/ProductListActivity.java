@@ -18,8 +18,7 @@ public class ProductListActivity extends AppCompatActivity {
     private TextView textViewIngredient, textViewPageInfo;
     private ImageButton btnNext, btnPrevious;
     private List<Product> allProducts;
-    private int currentPage = 1;
-    private static final int ITEMS_PER_PAGE = 6;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
