@@ -32,4 +32,40 @@
         android:padding="20dp"
         android:scrollbars="vertical" />
 
+    <!-- Pagination Control -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:padding="10dp">
+
+        <ImageButton
+            android:id="@+id/btnPrevious"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_arrow_back_24"
+            android:contentDescription="Previous"
+            android:background="@null"
+            android:padding="10dp"
+            android:enabled="false"/>
+
+        <TextView
+            android:id="@+id/page_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1/1 pages"
+            android:textSize="16sp" />
+
+        <ImageButton
+            android:id="@+id/btnNext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:padding="10dp"
+            android:enabled="false"
+            android:contentDescription="Next"
+            android:src="@drawable/baseline_arrow_forward_24" />
+
+    </LinearLayout>
 </LinearLayout>

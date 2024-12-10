@@ -57,4 +57,10 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
             productUrl = itemView.findViewById(R.id.productUrl);
         }
     }
+
+    public void updateDate(List<ProductModel> newProductList){
+        this.productList.clear();
+        this.productList.addAll(newProductList);
+        notifyDataSetChanged();
+    }
 }

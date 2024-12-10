@@ -101,7 +101,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/btn_background"
                 android:paddingHorizontal="20dp"
-                android:text="Glycerine"
+                android:text="Glycerin"
                 android:textColor="@color/blue"
                 android:textSize="26sp"
                 android:textStyle="bold"
