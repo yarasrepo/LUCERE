@@ -6,7 +6,7 @@
     <!-- Border of the input box -->
     <stroke
         android:width="2dp"
-        android:color="#FFFFFF" /> <!-- Black border -->
+        android:color="@color/dark_blue" /> <!-- Black border -->
 
     <!-- Corner radius to make the edges rounded -->
     <corners android:radius="200dp" />
