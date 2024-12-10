@@ -32,7 +32,10 @@ android {
 }
 
 dependencies {
-
+    implementation(libs.retrofit)
+    implementation(libs.retrofit.gson)
+    implementation(libs.logging.interceptor)
+    implementation(libs.glide)
     implementation(libs.appcompat)
     implementation(libs.material)
     testImplementation(libs.junit)
