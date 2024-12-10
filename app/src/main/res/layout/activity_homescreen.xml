@@ -38,8 +38,8 @@
         <!-- Profile Icon as a Button -->
         <ImageButton
             android:id="@+id/profileIcon"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:backgroundTint="@color/blue"
             android:background="@drawable/profile"
             android:contentDescription="Profile Icon"
