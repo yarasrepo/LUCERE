@@ -101,7 +101,7 @@
                 android:layout_height="wrap_content"
                 android:background="@color/beige"
                 android:paddingHorizontal="20dp"
-                android:text="Salicylic"
+                android:text="Glycerin"
                 android:textColor="@color/brown"
                 android:textSize="26sp"
                 android:textStyle="bold"
