@@ -70,7 +70,6 @@
                     android:hint="Email"
                     android:inputType="textEmailAddress"
                     android:minHeight="48dp"
-                    android:textColor="@color/blue"
                     android:textColorHint="@color/blue"
                     android:textSize="14sp"
                     android:visibility="visible" />
@@ -110,7 +109,6 @@
                     android:hint="Password"
                     android:inputType="textPassword"
                     android:minHeight="48dp"
-                    android:textColor="@color/blue"
                     android:textColorHint="@color/blue"
                     android:textSize="14sp"
                     android:visibility="visible" />
@@ -148,7 +146,6 @@
                     android:hint="Confirm Password"
                     android:inputType="textPassword"
                     android:minHeight="48dp"
-                    android:textColor="@color/blue"
                     android:textColorHint="@color/blue"
                     android:textSize="14sp"
                     android:visibility="visible" />
