@@ -20,7 +20,8 @@ public class MLRetrofitClient {
         OkHttpClient unsafeClient = getUnsafeOkHttpClient();
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.1.105:8000/") // Change this to your server's IP
+                .baseUrl("http://192.168.1.105:8000/")
+        //10.169.48.149 try this next
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(unsafeClient)
                 .build();

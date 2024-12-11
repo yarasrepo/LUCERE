@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/login_bg">
+    android:background="@drawable/login_bg_new">
 
     <LinearLayout
         android:id="@+id/setUpProfileBox"
@@ -37,8 +37,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif"
                 android:text="SET UP PROFILE"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textColor="#FFECCE"
+                android:textColor="@color/dark_blue"
                 android:textSize="30sp" />
 
             <Space
@@ -57,7 +56,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="4dp"
                     android:text="Full Name"
-                    android:textColor="#FFFFFF"
+                    android:textColor="@color/dark_blue"
                     android:textSize="12sp" /> <!-- Small space between label and input -->
 
                 <!-- First EditText for Email -->
@@ -70,7 +69,8 @@
                     android:hint="Full Name"
                     android:inputType="text"
                     android:minHeight="48dp"
-                    android:textColorHint="@color/brown"
+                    android:textColor="@color/blue"
+                    android:textColorHint="@color/blue"
                     android:textSize="14sp"
                     android:visibility="visible" />
             </LinearLayout>
@@ -87,17 +87,14 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <!-- Password Label -->
-                <!-- Small space between label and input -->
 
-                <!-- Second EditText for Password -->
                 <TextView
                     android:id="@+id/skinTypeLabel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="4dp"
                     android:text="Skin Type"
-                    android:textColor="#FFFFFF"
+                    android:textColor="@color/dark_blue"
                     android:textSize="12sp" />
 
                 <Spinner
@@ -106,6 +103,7 @@
                     android:layout_height="wrap_content"
                     android:minHeight="48dp"
                     android:background="@drawable/box_background"
+                    android:textColorHint="@color/blue"
                     android:visibility="visible" />
 
             </LinearLayout>
@@ -126,7 +124,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="4dp"
                     android:text="Birth Year"
-                    android:textColor="#FFFFFF"
+                    android:textColor="@color/dark_blue"
                     android:textSize="12sp" />
 
                 <!-- Spinner for Birth Year -->
@@ -136,7 +134,7 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/box_background"
                     android:minHeight="48dp"
-                    android:textColorHint="@color/brown"
+                    android:textColorHint="@color/blue"
                     android:visibility="visible" />
             </LinearLayout>
 
@@ -156,7 +154,7 @@
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="20dp"
                     android:text="SKIP"
-                    android:textColor="@color/brown"
+                    android:textColor="@color/blue"
                     android:background="@drawable/btn_background"
                     android:layout_gravity="start"
                     android:layout_margin="20dp"/> <!-- Optional for alignment -->
@@ -167,7 +165,7 @@
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="20dp"
                     android:text="NEXT"
-                    android:textColor="@color/brown"
+                    android:textColor="@color/blue"
                     android:background="@drawable/btn_background"
                     android:layout_gravity="end"
                     android:layout_margin="20dp"/>

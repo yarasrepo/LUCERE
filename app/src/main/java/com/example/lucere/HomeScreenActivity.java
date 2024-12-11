@@ -35,7 +35,6 @@ public class HomeScreenActivity extends AppCompatActivity {
     private ImageView cameraIcon;
     private ImageView profileIcon;
 
-    // ActivityResultLauncher for the camera
     private final ActivityResultLauncher<Intent> cameraLauncher = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
             result -> {
@@ -45,7 +44,6 @@ public class HomeScreenActivity extends AppCompatActivity {
                         Bundle extras = data.getExtras();
                         capturedImageBitmap = (Bitmap) extras.get("data");
                         if (capturedImageBitmap != null) {
-                            // Send the image directly to the ML server without showing it in an ImageView
                             sendImageToMLServer(capturedImageBitmap);
                         } else {
                             Log.e("HomeScreenActivity", "Captured image is null");
@@ -63,7 +61,6 @@ public class HomeScreenActivity extends AppCompatActivity {
         cameraIcon = findViewById(R.id.image_camera);
         profileIcon = findViewById(R.id.profileIcon);
 
-        // Request permissions at runtime if necessary
         if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.CAMERA)
                 != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.CAMERA}, 101);
@@ -104,11 +101,10 @@ public class HomeScreenActivity extends AppCompatActivity {
         bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
         byte[] byteArray = stream.toByteArray();
 
-        // Prepare the request body for the image
         RequestBody requestBody = RequestBody.create(MediaType.parse("image/jpg"), byteArray);
         MultipartBody.Part imagePart = MultipartBody.Part.createFormData("file", "captured_image.png", requestBody);
 
-        // Send the image to the ML server
+        //sedn to server
         MLRetrofitClient.getInstance().getMLService().uploadImage(imagePart)
                 .enqueue(new Callback<PredictionResponse>() {
                     @Override
