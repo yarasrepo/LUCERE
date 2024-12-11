@@ -69,7 +69,6 @@ public class HomeScreenActivity extends AppCompatActivity {
             ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.CAMERA}, 101);
         }
 
-        // Set the OnClickListener for the camera icon
         cameraIcon.setOnClickListener(v -> openCamera());
         profileIcon.setOnClickListener(v -> openProfilePage());
     }
@@ -79,7 +78,6 @@ public class HomeScreenActivity extends AppCompatActivity {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == 101) {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                // Permission granted, proceed with camera usage
                 openCamera();
             } else {
                 Toast.makeText(this, "Camera permission is required", Toast.LENGTH_SHORT).show();
@@ -102,13 +100,12 @@ public class HomeScreenActivity extends AppCompatActivity {
     private void sendImageToMLServer(Bitmap bitmap) {
         if (bitmap == null) return;
 
-        // Convert the bitmap to byte array
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
         bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
         byte[] byteArray = stream.toByteArray();
 
         // Prepare the request body for the image
-        RequestBody requestBody = RequestBody.create(MediaType.parse("image/png"), byteArray);
+        RequestBody requestBody = RequestBody.create(MediaType.parse("image/jpg"), byteArray);
         MultipartBody.Part imagePart = MultipartBody.Part.createFormData("file", "captured_image.png", requestBody);
 
         // Send the image to the ML server
@@ -120,7 +117,6 @@ public class HomeScreenActivity extends AppCompatActivity {
                             String prediction = response.body().getPrediction();
                             Log.d("Prediction", "Skin type prediction: " + prediction);
 
-                            // Pass the prediction result to the next activity
                             Intent intent = new Intent(HomeScreenActivity.this, SkinResultsActivity.class);
                             intent.putExtra("prediction_result", prediction);
                             startActivity(intent);
